@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="style.css" rel="stylesheet" />
+    <link href="./style.css" rel="stylesheet" />
     <title>To-Do List</title>
   </head>
   <body>
     <h1>To-Do List</h1>
-    <button>New To-Do</button>
-    <dialog>
+    <button id="new-task">New To-Do</button>
+    <dialog id="task-form">
       <form>
-        <label for="task-name">Task Name: </label>
-        <input type="text" name="task-name" id="task-name" /><br />
+        <label for="taskName">Task Name: </label>
+        <input type="text" name="taskName" id="taskName" /><br />
         <label for="description">Description: </label>
         <input type="text" name="description" id="description" /><br />
-        <label for="due-date">Due Date: </label>
-        <input type="text" name="due-date" id="due-date" /><br />
+        <label for="dueDate">Due Date: </label>
+        <input type="text" name="dueDate" id="dueDate" /><br />
         <label for="priority">Priority: </label>
         <input type="text" name="priority" id="priority" /><br />
         <input type="submit" value="Submit" id="submit" />
