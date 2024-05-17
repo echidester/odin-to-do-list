@@ -6,10 +6,12 @@ const EventListeners = () => {
   const newTaskBtn = document.querySelector("#new-task");
   const newTaskForm = document.querySelector("#task-form");
   const submitBtn = document.querySelector("#submit");
+  const closeWindowBtn = document.querySelector("#close-window");
+  const activeListBtn = document.querySelector("#active-list");
+  const completeListBtn = document.querySelector("#completed-list");
 
   const addNewTaskListener = () => {
     const handleClick = () => {
-      console.log("new task clicked");
       newTaskForm.showModal();
     };
 
@@ -20,9 +22,7 @@ const EventListeners = () => {
   const addSubmitBtnListener = () => {
     const handleClick = (event) => {
       event.preventDefault();
-      console.log("clicked");
 
-      console.log("Add task...");
       let task = new Task(
         taskName.value,
         description.value,
@@ -31,17 +31,43 @@ const EventListeners = () => {
       );
       todoList.push(task);
 
-      console.log("Clear form...");
       taskName.value = "";
       description.value = "";
       dueDate.value = "";
       priority.value = "";
 
       newTaskForm.close();
-      displayList();
+      displayList("active");
     };
     submitBtn.removeEventListener("click", handleClick);
     submitBtn.addEventListener("click", handleClick);
+  };
+
+  const addCloseWindowListener = () => {
+    const handleClick = () => {
+      newTaskForm.close();
+    };
+
+    closeWindowBtn.removeEventListener("click", handleClick);
+    closeWindowBtn.addEventListener("click", handleClick);
+  };
+
+  const addActiveTaskListener = () => {
+    const handleClick = () => {
+      displayList("active");
+    };
+
+    activeListBtn.removeEventListener("click", handleClick);
+    activeListBtn.addEventListener("click", handleClick);
+  };
+
+  const addCompleteTaskListener = () => {
+    const handleClick = () => {
+      displayList("complete");
+    };
+
+    completeListBtn.removeEventListener("click", handleClick);
+    completeListBtn.addEventListener("click", handleClick);
   };
 
   const addCompleteListener = () => {
@@ -50,7 +76,7 @@ const EventListeners = () => {
     const handleClick = (event) => {
       const index = event.target.id.slice(9);
       todoList[index].switchComplete(todoList[index].complete);
-      displayList();
+      displayList("active");
       console.log(todoList);
     };
 
@@ -66,7 +92,7 @@ const EventListeners = () => {
     const handleClick = (event) => {
       const index = event.target.id.slice(7);
       todoList.splice(index, 1);
-      displayList();
+      displayList("active");
       console.log(todoList);
     };
 
@@ -79,6 +105,9 @@ const EventListeners = () => {
   const addInitialListeners = () => {
     addNewTaskListener();
     addSubmitBtnListener();
+    addActiveTaskListener();
+    addCompleteTaskListener();
+    addCloseWindowListener();
   };
 
   const addRecurringListeners = () => {

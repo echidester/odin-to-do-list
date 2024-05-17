@@ -1,3 +1,122 @@
-.todo-container {
-  border: 1px solid black;
+@font-face {
+  font-family: "Teachers";
+  src: url("./Teachers/Teachers-VariableFont_wght.ttf");
+}
+
+body {
+  margin: 30px;
+  font-family: "Teachers", sans-serif;
+}
+
+#folder-container {
+  background-color: #e5e4e2;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
+h1 {
+  margin: 0;
+  padding-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+#folder-headline {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.15rem;
+}
+
+.folder-btn {
+  border: none;
+  text-align: left;
+  width: 100%;
+  background-color: #e5e4e2;
+  padding: 5px 10px;
+}
+
+.folder-btn:hover {
+  background-color: #c0c0c0;
+}
+
+#new-folder {
+  padding-top: 10px;
+}
+
+/* Task Section */
+
+.task-name {
+  margin-bottom: 7px;
+  margin-top: 30px;
+}
+
+.task-text {
+  margin: 0;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.complete,
+.delete,
+#new-task {
+  border: none;
+  background-color: white;
+  font-family: "Teachers", sans-serif;
+  font-size: 1rem;
+  padding: 5px;
+}
+
+.complete:hover,
+.delete:hover,
+#new-task:hover {
+  background-color: #e5e4e2;
+}
+
+/* Dialog Box */
+
+#task-form {
+  height: 300px;
+  width: 250px;
+  border: none;
+  border-radius: 10px;
+}
+
+#taskName {
+  width: 95%;
+}
+
+#dueDate {
+  width: 192px;
+}
+
+#priority {
+  width: 200px;
+  height: 21px;
+}
+
+#taskName,
+#description,
+#dueDate,
+#priority {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+#submit {
+  width: 50%;
+  margin-left: 25%;
+  margin-top: 5%;
+}
+
+#close-window {
+  float: right;
+  background-color: white;
+  /* border: 1px solid black;
+  border-radius: 3px; */
+  border: none;
+  color: #c0c0c0;
+  padding-bottom: 5px;
 }
